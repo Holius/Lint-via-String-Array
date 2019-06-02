@@ -1,0 +1,26 @@
+let story = "This is really, just a test."
+
+let uselessArray = [/just/, /really/];
+let newStory = [];
+
+const testAgainstRegex = (regexArray, stringArray) => {
+for (let i=0;i<regexArray.length;i++) {
+ for(let g=0;g<stringArray.length;g++) {
+    if (regexArray[i].test(stringArray[g])) {
+      delete stringArray[g];
+      };       
+    };
+   };
+ };
+ const delUndefined = del => {
+  if (undefined === del) {return false;}
+  return true; 
+}; 
+
+const  filterMe = (regexArray) => {
+  newStory = story.split(" ");
+  testAgainstRegex(regexArray, newStory);
+  return newStory.filter(delUndefined).join(" ");
+};
+
+console.log(filterMe(uselessArray, newStory));
