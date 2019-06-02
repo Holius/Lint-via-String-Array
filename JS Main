@@ -23,4 +23,4 @@ const  filterMe = (regexArray) => {
   return newStory.filter(delUndefined).join(" ");
 };
 
-console.log(filterMe(uselessArray, newStory));
+console.log(filterMe(uselessArray));
